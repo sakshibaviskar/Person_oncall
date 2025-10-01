@@ -1,56 +1,61 @@
-# Person_oncall
+# 📱 Smart Person-on-Call Detection System (YOLO Powered)
 
-📞 Smart Person-on-Call Detection System (YOLO Powered)<br>
-This project demonstrates an intelligent real-time Person-on-Call Detection System, powered by a YOLO object detection model.<br>
-It continuously analyzes each frame of a video stream and automatically detects when a person is talking on a mobile phone even in indoor or casual environments.<br><br>
+![Detection Example](assets/detection_example.png)
 
-When a phone-usage event is detected, the system:<br>
-✅ Draws a bounding box around the detected person<br>
-✅ Shows a confidence score in real time<br>
-✅ Crops and saves the detected frame for logging / evidence<br>
-✅ Updates a live counter of total detected “on-call” events<br><br>
+---
 
-⚠️ Prototype Note: The current demo uses a sample video, however you can simply replace it with any CCTV or recorded video (office, classroom, public area, etc.) to test it in a real-world scenario.<br><br>
+## 📝 Project Overview
 
-✅ Features<br>
-🔍 Real-time detection of people using a mobile phone (YOLO model – best.pt)<br>
-Annotated video output with bounding boxes and confidence values<br>
-Automatic cropping & saving of violation frames<br>
-Live event counting and time-based logging<br>
-Easily customizable for different environments or use cases<br><br>
+The **Smart Person-on-Call Detection System** is an intelligent **real-time phone usage detection** solution powered by a **YOLO object detection model**.  
 
-📂 Project Structure<br>
-Person-On-Call-Detection/<br>
-├── main.py                # Main detection script<br>
-├── best.pt                # YOLO weights for phone detection<br>
-├── sample_video.mp4       # Input video (replace with your own)<br>
-├── training.ipynb         # (Optional) Notebook used to train the model<br>
-└── README.md              # Project documentation<br><br>
+It continuously analyzes a video stream and automatically detects when a person is talking on a mobile phone, even in indoor or casual environments.  
 
-🔧 Installation<br>
-git clone https://github.com/&lt;your-username&gt;/person-on-call-detection.git<br>
-cd person-on-call-detection<br>
-pip install ultralytics opencv-python numpy<br><br>
+When a phone-usage event is detected, the system:
+
+- Draws a **bounding box** around the person  
+- Shows a **confidence score**  
+- **Crops and saves** the detected frame for logging or evidence  
+- Updates a **live counter** of total detected 'on-call' events  
+
+> **Prototype Note:** The current demo uses a sample video (`sample_video.mp4`), but you can replace it with any CCTV or recorded video.
+
+---
+
+## ✨ Key Features
+
+- **Real-time detection** of people using a mobile phone (YOLO model – `best.pt`)  
+- **Annotated video output** with bounding boxes and confidence values  
+- **Automatic cropping & saving** of violation frames  
+- **Live event counting** and time-based logging  
+- **Easily customizable** for different environments or use cases  
+
+---
+
+## 📷 Demonstration / Output Example
+
+Here’s an example of the system detecting a person 'on call':
+
+![Detection Example](assets/detection_example.png)
+
+---
+
+## 📂 Project Structure
+
+Person-On-Call-Detection/
+├── main.py # Main detection script
+├── best.pt # YOLO weights for phone detection
+├── sample_video.mp4 # Input video (replace with your own)
+├── training.ipynb # (Optional) Notebook used to train the model
+├── README.md # Project documentation
+└── assets/
+└── detection_example.png # Example output image
 
 
-🚀 Usage<br>
-python main.py<br>
-➡️ Press Q at any time to stop and exit.<br><br>
+---
 
-⚙️ Customization (in main.py)<br>
-Parameter — Description<br>
-frame_skip — Skip frames to improve speed (lower = smoother)<br>
-CONF_THRESHOLD — Minimum confidence required for a valid detection<br>
-save_crop — Whether to save cropped detections (True or False)<br><br>
+## ⚙️ Installation Instructions
 
-Example:<br>
-frame_skip = 2<br>
-CONF_THRESHOLD = 0.35<br>
-save_crop = True<br><br>
-
-📊 Output<br>
-Output Item — Description<br>
-detections/ — Cropped frames of detected phone-usage events<br>
-Annotated_Video.mp4 — Output video with bounding boxes and confidence overlays<br>
-Console / Terminal — Real-time logs of detection events<br><br>
-
+```bash
+git clone https://github.com/<your-username>/person-on-call-detection.git
+cd person-on-call-detection
+pip install ultralytics opencv-python numpy
